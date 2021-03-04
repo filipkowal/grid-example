@@ -129,13 +129,28 @@ main {
   display: none;
   cursor: pointer;
 }
-.block label:after {
+.block label:before {
   content: '+';
   color: var(--title-color);
   font-weight: bold;
+  opacity: 1;
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+  transition: opacity 0.2s linear;
+}
+.block label:after {
+  content: '-';
+  color: var(--title-color);
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.2s linear;
 }
 .block input:checked ~ label:after {
-  content: '-';
+  opacity: 1;
+}
+.block input:checked ~ label:before {
+  opacity: 0;
 }
 .block input:checked ~ div .block-text {
   height: 100%;
