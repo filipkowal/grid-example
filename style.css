@@ -1,0 +1,36 @@
+:root {
+  --background: #1b2026;
+  --title-color: white;
+  --text-color: #55646d;
+  --block-header-background: #55645e;
+  --block-text-color: #3e474c;
+  --button-color: #1c2026;
+}
+
+body {
+  background-color: var(--background);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--title-color);
+}
+p {
+  color: var(--text-color);
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.block .block .header {
+  background-color: var(--block-header-background);
+}
+.block .text {
+  color: var(--block-text-color);
+}
