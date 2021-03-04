@@ -101,7 +101,8 @@ main {
   max-height: 4rem;
   overflow: hidden;
   margin-bottom: 1rem;
-  transition: all 0.3s ease-out;
+  /* transition height workaround using max-height */
+  transition: all 0.5s ease-out;
 }
 .block .block-text p {
   margin-top: 0.5rem;
@@ -117,6 +118,12 @@ main {
   width: 1.5em;
   border-radius: 100%;
   margin-bottom: 0.7rem;
+  transition: background-color 0.2s ease;
+}
+.block label:focus,
+.block label:target,
+.block label:hover {
+  background-color: var(--block-text-color);
 }
 .block input {
   display: none;
@@ -132,8 +139,6 @@ main {
 }
 .block input:checked ~ div .block-text {
   height: 100%;
-  /* transition height workaround using max-height */
   max-height: 400px;
   margin-bottom: 0.3rem;
-  transition: max-height 0.7s ease;
 }
