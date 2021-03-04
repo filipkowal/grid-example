@@ -64,7 +64,7 @@ main {
 }
 
 .horizontal-separator {
-  border-bottom: solid white 2px;
+  border-bottom: solid var(--title-color) 2px;
   color: transparent;
 }
 
@@ -75,7 +75,6 @@ main {
 }
 .block .block-header {
   background-color: var(--block-header-background);
-  color: white;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   padding: 0.5rem;
@@ -99,8 +98,10 @@ main {
 .block .block-text {
   color: var(--block-text-color);
   height: 4rem;
+  max-height: 4rem;
   overflow: hidden;
   margin-bottom: 1rem;
+  transition: all 0.3s ease-out;
 }
 .block .block-text p {
   margin-top: 0.5rem;
@@ -128,10 +129,11 @@ main {
 }
 .block input:checked ~ label:after {
   content: '-';
-  color: var(--title-color);
-  font-weight: bold;
 }
 .block input:checked ~ div .block-text {
   height: 100%;
+  /* transition height workaround using max-height */
+  max-height: 400px;
   margin-bottom: 0.3rem;
+  transition: max-height 0.7s ease;
 }
